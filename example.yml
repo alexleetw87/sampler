@@ -22,6 +22,8 @@ runcharts:
         sample: curl -o /dev/null -s -w '%{time_total}'  https://search.yahoo.com
       - label: BING
         sample: curl -o /dev/null -s -w '%{time_total}'  https://www.bing.com
+gauges:
+  - title: YEAR PROGRESS
     position: [[45, 0], [35, 2]]
     cur:
         sample: date +%j
