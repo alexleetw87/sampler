@@ -2,14 +2,6 @@ runcharts:
   - title: Search engine response time
     position: [[0, 0], [45, 19]]
     rate-ms: 500
-    # triggers:
-    #   - title: Latency threshold exceeded
-    #     condition: echo "$prev < 0.8 && $cur > 0.8" |bc -l
-    #     actions:
-    #         terminal-bell: true
-    #         sound: true
-    #         visual: true
-    #         script: 'say alert: ${label} latency exceeded ${cur} second'
     legend:
         enabled: true
         details: false
@@ -49,12 +41,6 @@ gauges:
         sample: echo 0
   - title: MINUTE PROGRESS
     position: [[45, 9], [35, 2]]
-    # triggers:
-    #   - title: CLOCK BELL EVERY MINUTE
-    #     condition: '[ $label == "cur" ] && [ $cur -eq 0 ] && echo 1 || echo 0'
-    #     actions:
-    #         sound: true
-    #         script: say -v samantha `date +%I:%M%p`
     cur:
         sample: date +%S
     max:
@@ -63,24 +49,24 @@ gauges:
         sample: echo 0
 sparklines:
   - title: CPU usage
-    position: [[51, 28], [28, 9]]
+    position: [[46, 28], [34, 9]]
     rate-ms: 200
     scale: 0
     sample: ps -A -o %cpu | awk '{s+=$1} END {print s}'
 textboxes:
   - title: GPU Usage
-    position: [[0, 19], [49, 17]]
+    position: [[0, 20], [45, 17]]
     rate-ms: 500
     sample: nvidia-smi
 asciiboxes:
   - title: UTC time
-    position: [[49, 12], [35, 9]]
+    position: [[45, 12], [35, 9]]
     rate-ms: 500
     sample: env TZ=UTC date +%T
     border: false
     font: 2d
   - title: Local time
-    position: [[49, 19], [33, 9]]
+    position: [[45, 19], [33, 9]]
     rate-ms: 500
     sample: TZ='UTC+7:00' date +%T
     border: false
