@@ -1,0 +1,1 @@
+sampler --config example.yml
