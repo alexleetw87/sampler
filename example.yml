@@ -2,14 +2,14 @@ runcharts:
   - title: Search engine response time
     position: [[0, 0], [45, 19]]
     rate-ms: 500
-    triggers:
-      - title: Latency threshold exceeded
-        condition: echo "$prev < 0.8 && $cur > 0.8" |bc -l
-        actions:
-            terminal-bell: true
-            sound: true
-            visual: true
-            script: 'say alert: ${label} latency exceeded ${cur} second'
+    # triggers:
+    #   - title: Latency threshold exceeded
+    #     condition: echo "$prev < 0.8 && $cur > 0.8" |bc -l
+    #     actions:
+    #         terminal-bell: true
+    #         sound: true
+    #         visual: true
+    #         script: 'say alert: ${label} latency exceeded ${cur} second'
     legend:
         enabled: true
         details: false
@@ -49,12 +49,12 @@ gauges:
         sample: echo 0
   - title: MINUTE PROGRESS
     position: [[45, 9], [35, 2]]
-    triggers:
-      - title: CLOCK BELL EVERY MINUTE
-        condition: '[ $label == "cur" ] && [ $cur -eq 0 ] && echo 1 || echo 0'
-        actions:
-            sound: true
-            script: say -v samantha `date +%I:%M%p`
+    # triggers:
+    #   - title: CLOCK BELL EVERY MINUTE
+    #     condition: '[ $label == "cur" ] && [ $cur -eq 0 ] && echo 1 || echo 0'
+    #     actions:
+    #         sound: true
+    #         script: say -v samantha `date +%I:%M%p`
     cur:
         sample: date +%S
     max:
