@@ -1,19 +1,19 @@
-runcharts:
-  - title: Search engine response time
-    position: [[0, 0], [45, 19]]
-    rate-ms: 500
-    legend:
-        enabled: true
-        details: false
-    scale: 2
-    items:
-      - label: GOOGLE
-        color: 178
-        sample: curl -o /dev/null -s -w '%{time_total}'  https://www.google.com
-      - label: YAHOO
-        sample: curl -o /dev/null -s -w '%{time_total}'  https://search.yahoo.com
-      - label: BING
-        sample: curl -o /dev/null -s -w '%{time_total}'  https://www.bing.com
+#runcharts:
+#  - title: Search engine response time
+#    position: [[0, 3], [45, 19]]
+#    rate-ms: 500
+#    legend:
+#        enabled: true
+#        details: false
+#    scale: 2
+#    items:
+#      - label: GOOGLE
+#        color: 178
+#        sample: curl -o /dev/null -s -w '%{time_total}'  https://www.google.com
+#      - label: YAHOO
+#        sample: curl -o /dev/null -s -w '%{time_total}'  https://search.yahoo.com
+#      - label: BING
+#        sample: curl -o /dev/null -s -w '%{time_total}'  https://www.bing.com
 gauges:
   - title: YEAR PROGRESS
     position: [[45, 0], [35, 2]]
@@ -55,7 +55,7 @@ sparklines:
     sample: ps -A -o %cpu | awk '{s+=$1} END {print s}'
 textboxes:
   - title: GPU Usage
-    position: [[0, 20], [45, 17]]
+    position: [[0, 0], [45, 40]]
     rate-ms: 500
     sample: nvidia-smi
 asciiboxes:
